@@ -543,11 +543,15 @@ MonoBehaviour:
     type: 3}
   boostPrefab: {fileID: 324082944914061387, guid: e1de6bd8de4048d489521aa5e1dda614,
     type: 3}
+  coinPrefab: {fileID: 4694957107537230932, guid: f21acb8d24798174dbda18be8a3732ab,
+    type: 3}
   numberOfPlatforms: 5000
   levelWidth: 8
   minY: 2
   maxY: 2.45
   boostEach: 7
+  coinEach: 10
+  coinOffset: {x: 0, y: 1, z: 0}
 --- !u!4 &179503662
 Transform:
   m_ObjectHideFlags: 0
