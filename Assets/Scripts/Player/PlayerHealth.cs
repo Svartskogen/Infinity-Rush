@@ -4,26 +4,38 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public bool HasShield = false;
     private int health;
     public int maxHealth;
     public Sprite dedoSprite;
 
-    private ParticleSystem particleSystem;
+    public ParticleSystem bloodHitPS;
     private BoxCollider2D collider;
     private int recordHeight;
     private AudioSource audioSource;
+    public SpriteRenderer shieldVisual;
     private void Awake()
     {
         health = maxHealth;
     }
     void Start()
     {
-        particleSystem = GetComponent<ParticleSystem>();
+        bloodHitPS = GetComponent<ParticleSystem>();
         collider = GetComponent<BoxCollider2D>();
         audioSource = GetComponent<AudioSource>();
         PlayerKillLimit.PlayerKill += PlayerKillLimit_PlayerKill;
     }
-
+    private void Update()
+    {
+        if (HasShield)
+        {
+            shieldVisual.enabled = true;
+        }
+        else
+        {
+            shieldVisual.enabled = false;
+        }
+    }
     private void PlayerKillLimit_PlayerKill(object sender, System.EventArgs e)
     {
         KillPlayer();
@@ -35,11 +47,18 @@ public class PlayerHealth : MonoBehaviour
     }
     public void DamagePlayer(int amount)
     {
-        particleSystem.Play();
-        health -= amount;
-        if(health <= 0)
+        if (HasShield)
         {
-            PlayerKillLimit.triggerEventStatic();
+            HasShield = false;
+        }
+        else
+        {
+            bloodHitPS.Play();
+            health -= amount;
+            if (health <= 0)
+            {
+                PlayerKillLimit.triggerEventStatic();
+            }
         }
     }
     void KillPlayer()
