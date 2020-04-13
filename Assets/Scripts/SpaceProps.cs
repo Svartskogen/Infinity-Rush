@@ -47,11 +47,11 @@ public class SpaceProps : MonoBehaviour
             sat.transform.Rotate(new Vector3(0, 0, Random.Range(0, 60)));
             if(spawnLocation.x > 0)
             {
-                sat.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-10, -30), 0),ForceMode2D.Impulse);
+                sat.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-10, -25), 0),ForceMode2D.Impulse);
             }
             else
             {
-                sat.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(10, 30), 0), ForceMode2D.Impulse);
+                sat.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(10, 20), 0), ForceMode2D.Impulse);
             }
         }
     }

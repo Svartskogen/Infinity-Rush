@@ -9,9 +9,9 @@ public class HighScoreSet : MonoBehaviour
     void Start()
     {
         gameScore = 0;
-        if (!PlayerPrefs.HasKey("highscore"))
+        if (!PlayerPrefs.HasKey(Constants.HighScore_Pref))
         {
-            PlayerPrefs.SetInt("highscore", 0);
+            PlayerPrefs.SetInt(Constants.HighScore_Pref, 0);
         }
     }
 
@@ -22,10 +22,10 @@ public class HighScoreSet : MonoBehaviour
     }
     public static void SetHighscore(int score)
     {
-        int actual = PlayerPrefs.GetInt("highscore");
+        int actual = PlayerPrefs.GetInt(Constants.HighScore_Pref);
         if(score > actual)
         {
-            PlayerPrefs.SetInt("highscore", score);
+            PlayerPrefs.SetInt(Constants.HighScore_Pref, score);
         }
 
 

@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject explosionFx;
     private int health;
     public int maxHealth;
-
+    public int scoreReward;
     private ParticleSystem particles;
     private void Awake()
     {
@@ -40,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
     }
     void KillEnemy()
     {
-        HighScoreSet.gameScore += 3;
+        HighScoreSet.gameScore += scoreReward;
         Instantiate(explosionFx, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

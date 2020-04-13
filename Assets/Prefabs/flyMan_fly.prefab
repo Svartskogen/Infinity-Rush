@@ -97,6 +97,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -175,6 +176,7 @@ MonoBehaviour:
   explosionFx: {fileID: 4709614025267789531, guid: cf09eaf77dbbd1d4c85c267a48aa1f0a,
     type: 3}
   maxHealth: 2
+  scoreReward: 3
 --- !u!61 &5190084706119903497
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5042,6 +5044,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

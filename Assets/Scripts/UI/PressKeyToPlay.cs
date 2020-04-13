@@ -14,7 +14,7 @@ public class PressKeyToPlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             GameManager.StartGame();
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
