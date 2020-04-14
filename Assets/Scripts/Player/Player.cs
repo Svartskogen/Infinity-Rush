@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
 
     float movement = 0f;
+    public bool IsJetpacking = false;
+    float jetPackThrust;
 
     // Use this for initialization
     void Start()
@@ -28,12 +30,27 @@ public class Player : MonoBehaviour
         {
             //movement = 0;
         }
+
     }
 
     void FixedUpdate()
     {
-        Vector2 velocity = rb.velocity;
-        velocity.x = movement;
-        rb.velocity = velocity;
+        if (IsJetpacking)
+        {
+            Vector2 velocity;    
+            velocity.y = jetPackThrust; //Jittery TODO FIX, moverlo a update y usar el transform para moverlo en steps
+            velocity.x = movement;
+            rb.velocity = velocity;
+        }
+        else
+        {
+            Vector2 velocity = rb.velocity;
+            velocity.x = movement;
+            rb.velocity = velocity;
+        }
+    }
+    public void SetJetpackThrust(float value)
+    {
+        jetPackThrust = value;
     }
 }

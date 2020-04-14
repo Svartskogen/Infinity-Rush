@@ -649,7 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRef: {fileID: 1758053376319232376}
   playerHealth: {fileID: 7709931521302946034}
-  cost: 20
+  cost: 15
 --- !u!1 &179503660
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +778,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f27c9e2197ac64785fe5247d280214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &200668206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 200668207}
+  - component: {fileID: 200668208}
+  - component: {fileID: 200668209}
+  m_Layer: 0
+  m_Name: jetpack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &200668207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200668206}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2717251238726242545}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &200668208
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200668206}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 8ce12ac074c3e804ba057069668d326e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.33, y: 1.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &200668209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200668206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ed0edb0befad04d8e52e1c944e13ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasJetpack: 0
+  jetPackDuration: 2
+  jetPackThrust: 18
 --- !u!1 &203735552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Gives you a extra point of health
+  m_Text: 'Press "E" to give yourself a boost
 
 '
 --- !u!222 &327983079
@@ -3764,7 +3861,7 @@ GameObject:
   - component: {fileID: 1253700370}
   - component: {fileID: 1253700369}
   m_Layer: 5
-  m_Name: Sample
+  m_Name: Jetpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3810,7 +3907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 11250249975fc0c4a92524da070ac87a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ce12ac074c3e804ba057069668d326e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4135,7 +4232,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bubble
+  m_Text: Jetpack
 --- !u!222 &1580831244
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4719,7 +4816,7 @@ GameObject:
   - component: {fileID: 1766428865}
   - component: {fileID: 1766428867}
   m_Layer: 5
-  m_Name: Shop
+  m_Name: ConsumablesShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5118,6 +5215,7 @@ GameObject:
   - component: {fileID: 1868966922}
   - component: {fileID: 1868966921}
   - component: {fileID: 1868966920}
+  - component: {fileID: 1868966923}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -5188,7 +5286,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1868966921}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1868966923}
+        m_MethodName: BuyJetpack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1868966921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5225,6 +5334,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868966918}
   m_CullTransparentMesh: 0
+--- !u!114 &1868966923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868966918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e1c429e4a79a445bed931cd164adbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRef: {fileID: 1758053376319232376}
+  playerJetpack: {fileID: 200668209}
+  cost: 30
 --- !u!1 &1975973994
 GameObject:
   m_ObjectHideFlags: 0
@@ -5401,6 +5525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
+  IsJetpacking: 0
 --- !u!114 &1515263522444550698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5466,6 +5591,7 @@ Transform:
   m_Children:
   - {fileID: 5322317003052963330}
   - {fileID: 1189166372}
+  - {fileID: 200668207}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5676,7 +5802,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 04ce5cc997fd5f348aef1d99f5a00f68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9286531eb8807894ba76dbecfbd6a2f5, type: 3}
   m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0

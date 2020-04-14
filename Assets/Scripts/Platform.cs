@@ -22,13 +22,21 @@ public class Platform : MonoBehaviour
     {
         if (collision.relativeVelocity.y <= 0f)
         {
-            Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            Player player = collision.collider.GetComponent<Player>();
+            if (player != null)
             {
-                Vector2 velocity = rb.velocity;
-                velocity.y = jumpForce;
-                rb.velocity = velocity;
+                if (!player.IsJetpacking)
+                {
+                    Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        Vector2 velocity = rb.velocity;
+                        velocity.y = jumpForce;
+                        rb.velocity = velocity;
+                    }
+                }
             }
+
 
             Bullet bullet = collision.collider.GetComponent<Bullet>();
             if(bullet != null)
