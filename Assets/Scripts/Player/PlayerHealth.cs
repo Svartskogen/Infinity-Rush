@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            bloodHitPS.Play();
+            bloodHitPS.Play(false);
             health -= amount;
             if (health <= 0)
             {
