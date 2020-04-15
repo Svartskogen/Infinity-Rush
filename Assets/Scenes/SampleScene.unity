@@ -768,7 +768,7 @@ MonoBehaviour:
   numberOfPlatforms: 5000
   levelWidth: 8
   minY: 2
-  maxY: 2.45
+  maxY: 2.2
   boostEach: 7
   coinEach: 10
   coinOffset: {x: 0, y: 1, z: 0}
