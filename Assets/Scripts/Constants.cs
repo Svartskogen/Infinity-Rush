@@ -10,4 +10,5 @@ public static class Constants
     public const string Shotgun_Unlock_Pref = "shotgun";
     public const string Rifle_Unlock_Pref = "rifle";
     public const string Rpg_Unlock_Pref = "rpg";
+    public const string Last_Used_Wep_Pref = "last_wep";
 }

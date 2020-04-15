@@ -17,6 +17,8 @@ public class WeaponsUnlocks : MonoBehaviour
 
     public PlayerMoney playerMoney;
     public PlayerShoot playerShoot;
+
+    Weapon lastUsedWep;
     private void Awake()
     {
         if (!PlayerPrefs.HasKey(Constants.Shotgun_Unlock_Pref))
@@ -33,10 +35,16 @@ public class WeaponsUnlocks : MonoBehaviour
         {
             PlayerPrefs.SetInt(Constants.Rpg_Unlock_Pref, 0);
         }
+
+        if (!PlayerPrefs.HasKey(Constants.Last_Used_Wep_Pref))
+        {
+            PlayerPrefs.SetInt(Constants.Last_Used_Wep_Pref, 0);
+        }
+        LoadPrefs();
     }
     private void Start()
     {
-        LoadPrefs();
+        SetPlayerWeapon(lastUsedWep);
     }
     void LoadPrefs()
     {
@@ -66,6 +74,7 @@ public class WeaponsUnlocks : MonoBehaviour
         {
             rpg_unlocked = false;
         }
+        lastUsedWep = (Weapon)PlayerPrefs.GetInt(Constants.Last_Used_Wep_Pref);
     }
     void SavePrefs()
     {
@@ -139,5 +148,6 @@ public class WeaponsUnlocks : MonoBehaviour
     public void SetPlayerWeapon(Weapon weaponToSet)
     {
         playerShoot.SetWeaponTo(weaponToSet);
+        PlayerPrefs.SetInt(Constants.Last_Used_Wep_Pref, (int)weaponToSet);
     }
 }

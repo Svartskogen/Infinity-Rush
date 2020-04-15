@@ -10,6 +10,7 @@ public class PlayerJetpack : MonoBehaviour
 
     Player player;
     SpriteRenderer jetpackVisual;
+    AudioSource audioSource;
     float timer;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class PlayerJetpack : MonoBehaviour
         jetpackVisual = GetComponent<SpriteRenderer>();
         player = GetComponentInParent<Player>();
         player.SetJetpackThrust(jetPackThrust);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class PlayerJetpack : MonoBehaviour
             hasJetpack = false;
             player.IsJetpacking = true;
             timer = Time.time + jetPackDuration;
+            audioSource.Play();
         }
         if(player.IsJetpacking && Time.time > timer)
         {

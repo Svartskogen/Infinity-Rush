@@ -14,7 +14,7 @@ public class PlayerShoot : MonoBehaviour
     public WeaponsUnlocks.Weapon weapon = WeaponsUnlocks.Weapon.Pistol;
 
     private float cooldown;
-    void Start()
+    void Awake()
     {
         particleSystem = GetComponentInChildren<ParticleSystem>();
         audioSource = GetComponent<AudioSource>();

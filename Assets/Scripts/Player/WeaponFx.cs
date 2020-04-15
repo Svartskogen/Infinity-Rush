@@ -10,7 +10,7 @@ public class WeaponFx : MonoBehaviour
     AudioSource audioSource;
     SpriteRenderer spriteRenderer;
 
-    void Start()
+    void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
