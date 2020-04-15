@@ -11,6 +11,12 @@ public class WeaponsUnlocks : MonoBehaviour
     public bool rifle_unlocked;
     public bool rpg_unlocked;
 
+    public int shotgun_cost;
+    public int rifle_cost;
+    public int rpg_cost;
+
+    public PlayerMoney playerMoney;
+    public PlayerShoot playerShoot;
     private void Awake()
     {
         if (!PlayerPrefs.HasKey(Constants.Shotgun_Unlock_Pref))
@@ -89,5 +95,49 @@ public class WeaponsUnlocks : MonoBehaviour
         {
             PlayerPrefs.SetInt(Constants.Rpg_Unlock_Pref, 0);
         }
+    }
+
+    public void BuyWeapon(Weapon weaponToBuy)
+    {
+        switch (weaponToBuy)
+        {
+            case Weapon.Pistol:
+            {
+                Debug.LogError("Se intento comprar pistol");
+                break;
+            }
+            case Weapon.Shotgun:
+            {
+                if (playerMoney.SafeBuy(shotgun_cost))
+                {
+                    shotgun_unlocked = true;
+                    SavePrefs();
+                }
+                break;
+            }
+            case Weapon.BurstRifle:
+            {
+                if (playerMoney.SafeBuy(rifle_cost))
+                {
+                    rifle_unlocked = true;
+                    SavePrefs();
+                }
+                break;
+            }
+            case Weapon.RocketLauncher:
+            {
+                if (playerMoney.SafeBuy(rpg_cost))
+                {
+                    rpg_unlocked = true;
+                    SavePrefs();
+                }
+                break;
+            }
+        }
+    }
+
+    public void SetPlayerWeapon(Weapon weaponToSet)
+    {
+        playerShoot.SetWeaponTo(weaponToSet);
     }
 }
