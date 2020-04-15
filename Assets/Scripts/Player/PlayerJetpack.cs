@@ -22,7 +22,7 @@ public class PlayerJetpack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasJetpack)
+        if (hasJetpack || player.IsJetpacking)
         {
             jetpackVisual.enabled = true;
         }

@@ -15,11 +15,6 @@ public class HighScoreSet : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public static void SetHighscore(int score)
     {
         int actual = PlayerPrefs.GetInt(Constants.HighScore_Pref);
@@ -27,8 +22,6 @@ public class HighScoreSet : MonoBehaviour
         {
             PlayerPrefs.SetInt(Constants.HighScore_Pref, score);
         }
-
-
         try
         {
             SubmitScore.SubmitHighScore(score);

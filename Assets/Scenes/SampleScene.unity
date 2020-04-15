@@ -649,7 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRef: {fileID: 1758053376319232376}
   playerHealth: {fileID: 7709931521302946034}
-  cost: 15
+  cost: 10
 --- !u!1 &179503660
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +848,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 8ce12ac074c3e804ba057069668d326e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1107,7 +1107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Press "E" to give yourself a boost
+  m_Text: 'Press "W" to give yourself a boost
 
 '
 --- !u!222 &327983079
@@ -5348,7 +5348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRef: {fileID: 1758053376319232376}
   playerJetpack: {fileID: 200668209}
-  cost: 30
+  cost: 20
 --- !u!1 &1975973994
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,6 +5622,7 @@ GameObject:
   - component: {fileID: 7709931521751383226}
   - component: {fileID: 7709931521751383225}
   - component: {fileID: 7709931521751383224}
+  - component: {fileID: 3826876965662841572}
   m_Layer: 9
   m_Name: pivot
   m_TagString: Untagged
@@ -5629,6 +5630,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3826876965662841572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826876965662841571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134c6ab0f0aaf80438fda654dac4bbd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSprites:
+  - {fileID: 21300000, guid: 04ce5cc997fd5f348aef1d99f5a00f68, type: 3}
+  - {fileID: 21300000, guid: 9286531eb8807894ba76dbecfbd6a2f5, type: 3}
+  - {fileID: 21300000, guid: 21c8842c636523d4da4ded15e29123ad, type: 3}
+  - {fileID: 21300000, guid: 2be8393b253efb74c903afd295db207e, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: 94475751d0a9f3944b20b79a27500a44, type: 3}
+  - {fileID: 8300000, guid: b2066109eebdc76469efc3ff3c88682c, type: 3}
+  - {fileID: 8300000, guid: ab945f091af710041bef3579a631d2a8, type: 3}
+  - {fileID: 0}
 --- !u!1001 &5117104024900161780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5802,7 +5825,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 9286531eb8807894ba76dbecfbd6a2f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04ce5cc997fd5f348aef1d99f5a00f68, type: 3}
   m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5964,7 +5987,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 94475751d0a9f3944b20b79a27500a44, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6063,6 +6086,7 @@ MonoBehaviour:
   point: {fileID: 2738128906445362319}
   bulletPrefab: {fileID: 5663684099720307623, guid: 96d05b60876a40a47b0f9ec33b9964fb,
     type: 3}
+  weapon: 0
 --- !u!114 &7709931521751383226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10862,13 +10886,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7709931521988175502}
-  m_LocalRotation: {x: 0, y: 0, z: -0.19509031, w: 0.98078537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 2738128906445362319}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -22.5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7709931521988175502
 GameObject:
   m_ObjectHideFlags: 0

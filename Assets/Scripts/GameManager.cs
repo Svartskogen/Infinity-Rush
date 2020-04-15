@@ -11,17 +11,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         play = false;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public static bool Playing()
     {
         return instance.play;
