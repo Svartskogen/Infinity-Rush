@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     public ParticleSystem bloodHitPS;
     private BoxCollider2D collider;
+    public BoxCollider2D extraCollider;
     private int recordHeight;
     private AudioSource audioSource;
     public SpriteRenderer shieldVisual;
@@ -68,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = dedoSprite;
         //Debug.Log("dedo");
         collider.enabled = false;
+        extraCollider.enabled = false;
         recordHeight = (int)transform.position.y;
         HighScoreSet.SetHighscore(recordHeight + HighScoreSet.gameScore);
     }

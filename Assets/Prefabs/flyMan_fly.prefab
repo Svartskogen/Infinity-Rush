@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649902749}
   - component: {fileID: 649902750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: instanciator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 1195014051}
   - component: {fileID: 5452853586923757343}
   - component: {fileID: 4994330563118702876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flyMan_fly
   m_TagString: Enemy
   m_Icon: {fileID: 0}

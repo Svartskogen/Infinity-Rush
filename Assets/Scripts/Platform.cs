@@ -28,7 +28,7 @@ public class Platform : MonoBehaviour
             {
                 if (!player.IsJetpacking)
                 {
-                    rb = collision.collider.GetComponent<Rigidbody2D>();
+                    rb = collision.collider.GetComponentInParent<Rigidbody2D>();
                     if (rb != null)
                     {
                         Vector2 velocity = rb.velocity;

@@ -17,8 +17,8 @@ TagManager:
   - noColPlayer
   - Player
   - enemyBullet
-  - 
-  - 
+  - Platform
+  - PlayerHitbox
   - 
   - 
   - 
