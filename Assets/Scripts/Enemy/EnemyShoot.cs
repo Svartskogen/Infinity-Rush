@@ -2,24 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script responsible of spawning <see cref="bulletPrefab"/> at the given <see cref="instantiationPoint"/>
+/// </summary>
 public class EnemyShoot : MonoBehaviour
 {
-    public Transform instanciationPoint;
+    /// <summary>
+    /// Point that aims towards the player, used with a <see cref="LookAtTransform"/> script
+    /// </summary>
+    public Transform instantiationPoint;
     public GameObject bulletPrefab;
+
     private float cooldown;
     private AudioSource audio;
     private EnemyFly fly;
-    // Start is called before the first frame update
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
         fly = GetComponent<EnemyFly>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if(Time.time > cooldown && fly.isClose())
+        if(Time.time > cooldown && fly.IsClose())
         {
             cooldown = Time.time + 3f;
             Shoot();
@@ -27,9 +32,8 @@ public class EnemyShoot : MonoBehaviour
             audio.Play();
         }   
     }
-
     void Shoot()
     {
-        Instantiate(bulletPrefab, instanciationPoint.transform.position, instanciationPoint.transform.rotation);
+        Instantiate(bulletPrefab, instantiationPoint.transform.position, instantiationPoint.transform.rotation);
     }
 }

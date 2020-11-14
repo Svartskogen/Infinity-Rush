@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script responsible for handling each enemy health values, handling his death, scoring the kill reward and spawning an explosion fx
+/// </summary>
 public class EnemyHealth : MonoBehaviour
 {
     public GameObject explosionFx;
-    private int health;
     public int maxHealth;
     public int scoreReward;
+
+    private int health;
     private ParticleSystem particles;
+
     private void Awake()
     {
         health = maxHealth;
@@ -17,18 +22,16 @@ public class EnemyHealth : MonoBehaviour
     {
         particles = GetComponent<ParticleSystem>();  
     }
-
-
-    void Update()
-    {
-
-    }
-
-
+    /// <summary>
+    /// Returns the current enemy health
+    /// </summary>
     public int GetHealth()
     {
         return health;
     }
+    /// <summary>
+    /// Damages the enemy and handles his death
+    /// </summary>
     public void DamageEnemy(int amount)
     {
         particles.Play();

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages the jetpack visual and tells the <see cref="Player"/> when its active
+/// </summary>
 public class PlayerJetpack : MonoBehaviour
 {
     public bool hasJetpack = false;

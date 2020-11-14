@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Small variation of the <see cref="LookAtTransform"/> script, which aims towards the mouse position and flips the sprite given the case.
+/// </summary>
 public class WeaponLookAtMouse : MonoBehaviour
 {
-    Vector3 mousePos;
     private SpriteRenderer sprite;
-    // Start is called before the first frame update
+
     void Start()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);

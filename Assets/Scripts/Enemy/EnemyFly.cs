@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script responsible of the Enemy movement.
+/// </summary>
 public class EnemyFly : MonoBehaviour
 {
-    public float speed;
+    [SerializeField] float speed;
 
     private Transform player;
-
     private float cooldown;
-    private bool moveOrder;
+    private bool moveOrder; //Should the enemy move?
     private bool fast;
     private Vector3 moveTo;
-    // Start is called before the first frame update
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -20,27 +22,24 @@ public class EnemyFly : MonoBehaviour
         fast = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-
         if(Time.time > cooldown)
         {
             cooldown = Time.time + 1;
-            if(Vector3.Distance(transform.position,player.position) > 5)
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            if (distanceToPlayer > 5)
             {
-                if(Vector3.Distance(transform.position, player.position) > 15)
+                //If the player went far enough, move faster to keep up with his pace.
+                if(distanceToPlayer > 15)
                 {
-                    //Debug.Log("El jugador esta lejos, acercandose rapido");
                     Vector3 pos = player.transform.position;
-                    fast = true;
                     pos.y += 6;
+                    fast = true;
                     MoveTo(pos);
                 }
                 else
                 {
-                    //Debug.Log("El jugador esta cerca, acercandose");
                     Vector3 pos = player.transform.position;
                     pos.y += 6;
                     fast = false;
@@ -48,7 +47,7 @@ public class EnemyFly : MonoBehaviour
                 }
             }
         }
-
+        //The enemy must move, handle each step.
         if (moveOrder)
         {
             float step = speed * Time.deltaTime;
@@ -58,19 +57,21 @@ public class EnemyFly : MonoBehaviour
             }
             transform.position = Vector2.MoveTowards(transform.position, moveTo, step);
         }
+        //If the enemy did reach his destination, stop.
         if(Vector3.Distance(transform.position,moveTo) < 1)
         {
             moveOrder = false;
         }
-
-
     }
     void MoveTo(Vector3 position)
     {
         moveTo = position;
         moveOrder = true;
     }
-    public bool isClose()
+    /// <summary>
+    /// Returns true if the player is close enough to shoot, used by <see cref="EnemyShoot"/>
+    /// </summary>
+    public bool IsClose()
     {
         return (Vector3.Distance(transform.position, player.position) < 6);
     }

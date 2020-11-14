@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 using System.Runtime.InteropServices;
 
+
+[Obsolete("Deprecated, not releasing to Kongregate anymore", false)]
 public class KongregateAPIController : MonoBehaviour
 {
-
-
     private static KongregateAPIController instance;
 
     [DllImport("__Internal")]
@@ -22,17 +23,15 @@ public class KongregateAPIController : MonoBehaviour
             return;
         }
 
-        Object.DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
         gameObject.name = "KongregateAPI";
-
         try
         {
             KAPIInit();
         }
         catch
         {
-            Debug.LogError("No se pudo iniciar la API de kong");
-            //throw;
+            Debug.LogWarning("Couldn't start the Kongregate API");
         }
     }
 

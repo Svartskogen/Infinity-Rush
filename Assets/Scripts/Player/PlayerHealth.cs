@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the player's movement, shields, hit particles, sfx, death and record height.
+/// </summary>
 public class PlayerHealth : MonoBehaviour
 {
     public bool HasShield = false;
-    private int health;
     public int maxHealth;
-    public Sprite dedoSprite;
+    public Sprite deathSprite;
+
+    private int health;
 
     public ParticleSystem bloodHitPS;
-    private BoxCollider2D collider;
     public BoxCollider2D extraCollider;
+    public SpriteRenderer shieldVisual;
+
+    private BoxCollider2D collider;
     private int recordHeight;
     private AudioSource audioSource;
-    public SpriteRenderer shieldVisual;
+
     private void Awake()
     {
         health = maxHealth;
@@ -41,7 +47,6 @@ public class PlayerHealth : MonoBehaviour
     {
         KillPlayer();
     }
-
     public int GetHealth()
     {
         return health;
@@ -66,8 +71,7 @@ public class PlayerHealth : MonoBehaviour
     {
         audioSource.Play();
         PlayerKillLimit.PlayerKill -= PlayerKillLimit_PlayerKill;
-        GetComponent<SpriteRenderer>().sprite = dedoSprite;
-        //Debug.Log("dedo");
+        GetComponent<SpriteRenderer>().sprite = deathSprite;
         collider.enabled = false;
         extraCollider.enabled = false;
         recordHeight = (int)transform.position.y;

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages the different weapon's sprites and audio clips based on the <see cref="WeaponsUnlocks.Weapon"/> enum.
+/// </summary>
 public class WeaponFx : MonoBehaviour
 {
     public Sprite[] weaponSprites = new Sprite[WeaponsUnlocks.WeaponsAmount];

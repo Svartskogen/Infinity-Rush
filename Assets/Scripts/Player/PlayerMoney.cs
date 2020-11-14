@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Saves, loads, and gets the current player money.
+/// </summary>
 public class PlayerMoney : MonoBehaviour
 {
     public int currentMoney;
@@ -22,11 +25,18 @@ public class PlayerMoney : MonoBehaviour
     {
         currentMoney = PlayerPrefs.GetInt(Constants.Money_Pref);
     }
+    /// <summary>
+    /// Gives the player the given amount of money and saves the value to the save system.
+    /// </summary>
     public void GiveMoney(int amount)
     {
         currentMoney += amount;
         SaveMoney();
     }
+    /// <summary>
+    /// Returns true if the player has enough money to buy something, and deducts the given amount.
+    /// If the player doesn't have enough money, returns false and doesn't spend any money.
+    /// </summary>
     public bool SafeBuy(int cost)
     {
         if(currentMoney - cost >= 0)

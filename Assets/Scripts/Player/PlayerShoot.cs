@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the player's shooting towards the <see cref="point"/> which is updated by a <see cref="WeaponLookAtMouse"/> script.
+/// </summary>
 public class PlayerShoot : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -22,7 +25,6 @@ public class PlayerShoot : MonoBehaviour
         weaponFx.SetVisualsTo(weapon);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.Playing() && Input.GetKeyDown(KeyCode.Mouse0) && Time.time > cooldown)
