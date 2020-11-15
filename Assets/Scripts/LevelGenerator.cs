@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Procedural, on demand map generation
+/// </summary>
 public class LevelGenerator : MonoBehaviour
 {
     [System.Serializable]
@@ -25,7 +28,7 @@ public class LevelGenerator : MonoBehaviour
 
     private Transform player;
     Vector2 lastPosition = new Vector2(0, 0);
-    // Start is called before the first frame update
+
     void Start()
     {
         if(generatorMode == GeneratorMode.Simple)
@@ -54,8 +57,6 @@ public class LevelGenerator : MonoBehaviour
             boostCounter = 0;
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(generatorMode == GeneratorMode.PositionBased)

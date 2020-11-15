@@ -8,7 +8,7 @@ using UnityEngine;
 public class WeaponLookAtMouse : MonoBehaviour
 {
     private SpriteRenderer sprite;
-
+    
     void Start()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();

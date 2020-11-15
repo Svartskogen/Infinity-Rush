@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script used to set current <see cref="GameObject"/> to inactive on gameplay.
+/// </summary>
 public class HideOnPlay : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

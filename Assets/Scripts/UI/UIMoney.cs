@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Updates the current <see cref="GameObject"/>'s <see cref="Text"/> with the <see cref="PlayerMoney.currentMoney"/> value
+/// </summary>
 public class UIMoney : MonoBehaviour
 {
     public PlayerMoney playerMoney;
     Text text;
-    // Start is called before the first frame update
+
     void Start()
     {
         text = GetComponent<Text>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         text.text = playerMoney.currentMoney.ToString();

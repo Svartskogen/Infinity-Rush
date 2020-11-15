@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
             health -= amount;
             if (health <= 0)
             {
-                PlayerKillLimit.triggerEventStatic();
+                PlayerKillLimit.TriggerEventStatic();
             }
         }
     }

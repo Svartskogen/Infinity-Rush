@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Simple platform script handling <see cref="Player"/> and <see cref="Bullet"/> bouncing
+/// </summary>
 public class Platform : MonoBehaviour
 {
     public float jumpForce = 10f;
     public bool destroy;
     private Transform camera;
+
     private void Start()
     {
         camera = Camera.main.transform;
@@ -39,8 +43,6 @@ public class Platform : MonoBehaviour
                     return;
                 }
             }
-
-
             rb = collision.collider.GetComponent<Rigidbody2D>();
             if (rb != null)
             {

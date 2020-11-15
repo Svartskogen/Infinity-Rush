@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Holds the <see cref="PlayerKill"/> event and triggers it when the player falls.
+/// </summary>
 public class PlayerKillLimit : MonoBehaviour
 {
     public class PlayerKillArgs : EventArgs
@@ -12,13 +15,12 @@ public class PlayerKillLimit : MonoBehaviour
     public static event EventHandler<EventArgs> PlayerKill;
 
     public static bool triggerEvent;
-    // Start is called before the first frame update
+    
     void Start()
     {
         triggerEvent = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (triggerEvent)
@@ -34,8 +36,7 @@ public class PlayerKillLimit : MonoBehaviour
             PlayerKill?.Invoke(this, EventArgs.Empty);
         }
     }
-
-    public static void triggerEventStatic()
+    public static void TriggerEventStatic()
     {
         triggerEvent = true;
     }

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Destroys the object after a given time.
+/// </summary>
 public class DestroyAfterTime : MonoBehaviour
 {
     public float time;
@@ -9,11 +12,5 @@ public class DestroyAfterTime : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, time); 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Simple Singleton game manager keeping track of the current play state
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;

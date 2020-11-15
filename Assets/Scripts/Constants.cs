@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Static class holding <see cref="PlayerPrefs"/> values
+/// </summary>
 public static class Constants
 {
     public const string HighScore_Pref = "highscore";

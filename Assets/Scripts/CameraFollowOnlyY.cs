@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Camera follow system. only updates if the <see cref="target"/> position is higher than the current <see cref="Transform.position.y"/> value
+/// </summary>
 public class CameraFollowOnlyY : MonoBehaviour
 {
     public Transform target;

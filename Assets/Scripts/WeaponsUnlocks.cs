@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Holds, loads and saves the unlocked weapons.
+/// </summary>
 public class WeaponsUnlocks : MonoBehaviour
 {
     public enum Weapon { Pistol, Shotgun, BurstRifle,RocketLauncher };
@@ -105,7 +108,6 @@ public class WeaponsUnlocks : MonoBehaviour
             PlayerPrefs.SetInt(Constants.Rpg_Unlock_Pref, 0);
         }
     }
-
     public void BuyWeapon(Weapon weaponToBuy)
     {
         switch (weaponToBuy)
@@ -144,7 +146,6 @@ public class WeaponsUnlocks : MonoBehaviour
             }
         }
     }
-
     public void SetPlayerWeapon(Weapon weaponToSet)
     {
         playerShoot.SetWeaponTo(weaponToSet);

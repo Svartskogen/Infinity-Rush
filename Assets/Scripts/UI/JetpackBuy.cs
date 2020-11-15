@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Buy and UI logic of the consumable item.
+/// </summary>
 public class JetpackBuy : MonoBehaviour
 {
     public PlayerMoney playerRef;
@@ -11,15 +14,13 @@ public class JetpackBuy : MonoBehaviour
 
     Text costText;
     Button button;
-    // Start is called before the first frame update
+
     void Start()
     {
         costText = GetComponentInChildren<Text>();
         button = GetComponent<Button>();
         costText.text = cost.ToString();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (playerRef.currentMoney > cost || !playerJetpack.hasJetpack)

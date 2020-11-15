@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Dynamic background manager, keeps track of the <see cref="Player"/> height to change from a different set of Sprites.
+/// </summary>
 public class DynamicBackgrounds : MonoBehaviour
 {
     public Transform player;
-    //public Sprite groundLevelSprite;
     public int groundCeiling;
     public int skyCeiling;
-    //public Sprite skyLevelSprite;
 
     public SpriteRenderer[] groundSprites;
     public SpriteRenderer[] skySprites;
@@ -16,15 +17,13 @@ public class DynamicBackgrounds : MonoBehaviour
     bool toggleSky;
     bool toggleSpace;
     float time;
-    // Start is called before the first frame update
+
     void Start()
     {
         time = 2f;
         toggleSky = false;
         toggleSpace = false;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(player.position.y > groundCeiling)
@@ -42,7 +41,6 @@ public class DynamicBackgrounds : MonoBehaviour
             {
                 spriteRenderer.color = Color.Lerp(spriteRenderer.color, whiteNoAlpha, time * Time.deltaTime);
             }
-            //text.color = Color.Lerp(text.color, desiredColor, time * Time.deltaTime);
         }
         if (toggleSpace)
         {

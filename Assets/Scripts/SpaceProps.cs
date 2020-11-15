@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Spawns decorative space props at a given height
+/// </summary>
 public class SpaceProps : MonoBehaviour
 {
     public Transform player;

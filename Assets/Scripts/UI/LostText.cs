@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;   
+
+/// <summary>
+/// Listens to the PlayerKill event and handles the <see cref="GameObject"/>'s <see cref="Text"/> color to show a "Lost" message
+/// </summary>
 public class LostText : MonoBehaviour
 {
     public Color desiredColor;

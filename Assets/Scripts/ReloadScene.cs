@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Reloads the scene after a brief delay on <see cref="PlayerKillLimit.PlayerKill"/> event
+/// </summary>
 public class ReloadScene : MonoBehaviour
 {
     private bool enabled;
     private bool firecd;
     private float cd;
-    // Start is called before the first frame update
+
     void Start()
     {
         enabled = false;
         firecd = false;
         PlayerKillLimit.PlayerKill += PlayerKillLimit_PlayerKill;
     }
-
     private void PlayerKillLimit_PlayerKill(object sender, System.EventArgs e)
     {
         cd = Time.time + 1f;
         firecd = true;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (firecd && Time.time > cd && Input.anyKey)

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages all the logic of UI of the Weapons shop.
+/// </summary>
 public class WeaponBuyBtn : MonoBehaviour
 {
     public WeaponsUnlocks.Weapon weapon;
@@ -14,7 +17,7 @@ public class WeaponBuyBtn : MonoBehaviour
     WeaponsUnlocks weaponsUnlocks;
     State state;
     int cost;
-    // Start is called before the first frame update
+
     void Start()
     {
         weaponsUnlocks = GetComponentInParent<WeaponsUnlocks>();
@@ -22,7 +25,6 @@ public class WeaponBuyBtn : MonoBehaviour
         button = GetComponent<Button>();
         buttonText = GetComponentInChildren<Text>();
     }
-
     void CheckStateFromWeaponsUnlocks()
     {
         switch (weapon)

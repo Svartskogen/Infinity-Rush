@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles coin pickup audio and logic.
+/// </summary>
 public class Coin : MonoBehaviour
 {
     AudioSource audioSource;

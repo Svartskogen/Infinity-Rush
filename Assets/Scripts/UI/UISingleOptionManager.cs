@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Quick and hacky solution to having a single option displayed at a time from a set of <see cref="Image"/>
+/// </summary>
 public class UISingleOptionManager : MonoBehaviour
 {
     public Image[] options;
 
     private int lastIndexSet;
-    // Start is called before the first frame update
+
     void Start()
     {
         lastIndexSet = 0;
@@ -18,13 +21,6 @@ public class UISingleOptionManager : MonoBehaviour
         }
         options[lastIndexSet].enabled = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetOption(int index)
     {
         for(int i = 0; i < options.Length; i++)
@@ -37,12 +33,10 @@ public class UISingleOptionManager : MonoBehaviour
             {
                 options[i].enabled = false;
             }
-            
         }
     }
     public int GetOption(int index)
     {
-
         return lastIndexSet;
     }
 }

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Hacked away 3 state health display.
+/// </summary>
 public class HealthDisplay : MonoBehaviour
 {
     public GameObject corazon1;
@@ -10,13 +13,10 @@ public class HealthDisplay : MonoBehaviour
 
     private PlayerHealth playerHealth;
     private int health;
-    // Start is called before the first frame update
     void Start()
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         corazon1.SetActive(false);

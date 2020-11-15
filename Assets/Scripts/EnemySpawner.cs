@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Simple enemy spawn manager.
+/// Supports a single type of enemy and spawns it after a slightly variable amount of time.
+/// </summary>
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy;
@@ -17,7 +21,6 @@ public class EnemySpawner : MonoBehaviour
         cooldown = Time.time + 10f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(GameManager.Playing() && Time.time > cooldown)
