@@ -27,10 +27,11 @@ You can play the game right away at [itch.io](https://svartskogen.itch.io/infini
 
 ## Screenshots
 
-//TODO
 <img src="http://media.svartskogen.com/infrush/screen1.jpg" />
 
 <img src="http://media.svartskogen.com/infrush/screen2.jpg" />
+
+<img src="http://media.svartskogen.com/infrush/screen3.jpg" />
 
 ## License
 
