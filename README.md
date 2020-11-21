@@ -2,7 +2,7 @@
 
 2D Infinite jumper with a shooter twist!
 
-Originaly made in 48 hours for the Kenney Jam 2019; Theme "Unlikely Combinations"
+Originaly made in **48** hours for the **Kenney Jam 2019**; Theme "**Unlikely Combinations**"
 
 | [:sparkles: Features](#code-and-features) | [:video_game: Play!](#play) | [:camera: Screenshots](#screenshots) |
 | --------------- | -------- | ----------- |
