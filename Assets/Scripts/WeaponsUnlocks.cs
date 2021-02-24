@@ -99,6 +99,12 @@ public class WeaponsUnlocks : MonoBehaviour
             PlayerPrefs.SetInt(Constants.Rifle_Unlock_Pref, 0);
         }
 
+        int a = int.Parse(true.ToString());
+
+        PlayerPrefs.SetInt(Constants.Rpg_Unlock_Pref, (rpg_unlocked ? 1 : 0));
+        
+        PlayerPrefs.SetInt(Constants.Rpg_Unlock_Pref, int.Parse(rpg_unlocked.ToString()));
+        
         if (rpg_unlocked)
         {
             PlayerPrefs.SetInt(Constants.Rpg_Unlock_Pref, 1);

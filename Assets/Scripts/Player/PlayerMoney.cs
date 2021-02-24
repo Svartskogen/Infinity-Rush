@@ -11,10 +11,6 @@ public class PlayerMoney : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!PlayerPrefs.HasKey(Constants.Money_Pref))
-        {
-            PlayerPrefs.SetInt(Constants.Money_Pref, 0);
-        }
         LoadMoney();
     }
     void SaveMoney()
@@ -23,6 +19,10 @@ public class PlayerMoney : MonoBehaviour
     }
     void LoadMoney()
     {
+        if (!PlayerPrefs.HasKey(Constants.Money_Pref))
+        {
+            PlayerPrefs.SetInt(Constants.Money_Pref, 0);
+        }
         currentMoney = PlayerPrefs.GetInt(Constants.Money_Pref);
     }
     /// <summary>
