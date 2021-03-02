@@ -20,6 +20,14 @@ Originaly made in **48 hours** for the **Kenney Jam 2019**; Theme "**Unlikely Co
 - Simple local highscore and stats save system using [**PlayerPrefs**](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html)
 - Clone the repo straight away with `git clone https://github.com/Svartskogen/Infinity-Rush.git` and check the game in Unity by yourself
 - The game's target platform is **WebGL** and it's designed to run in a **960x600** resolution, however it can be ported easily to Desktop and any resolution.
+### New features added because of one small team of students from Neumont College Of Computer Science
+
+- New Shotgun!
+- New Sound effects
+- Background music!
+- New dissapearing platforms!
+- Balance Changes!
+- and bug fixes! :D
 
 ## Play
 
