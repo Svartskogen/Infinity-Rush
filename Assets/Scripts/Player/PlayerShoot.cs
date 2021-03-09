@@ -47,7 +47,8 @@ public class PlayerShoot : MonoBehaviour
             case WeaponsUnlocks.Weapon.Shotgun:
             {
                 Instantiate(bulletPrefab, point.transform.position, point.transform.rotation);
-                StartCoroutine(DelayedShot(0.2f));
+                Instantiate(bulletPrefab, point.transform.position + new Vector3(0.5f,0.5f,0.5f), point.transform.rotation);
+                Instantiate(bulletPrefab, point.transform.position - new Vector3(0.5f,0.5f,0.5f), point.transform.rotation);                
                 break;
             }
             case WeaponsUnlocks.Weapon.BurstRifle:
