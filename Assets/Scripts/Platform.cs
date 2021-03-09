@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 /// <summary>
 /// Simple platform script handling <see cref="Player"/> and <see cref="Bullet"/> bouncing
 /// </summary>
 public class Platform : MonoBehaviour
 {
+    [SerializeField] AudioSource bulletbounce = null;
     public float jumpForce = 10f;
     public bool destroy;
     private Transform camera;
@@ -14,6 +16,7 @@ public class Platform : MonoBehaviour
     private void Start()
     {
         camera = Camera.main.transform;
+        bulletbounce = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -52,9 +55,12 @@ public class Platform : MonoBehaviour
             }
 
             Bullet bullet = collision.collider.GetComponent<Bullet>();
+            Rigidbody2D bulletrb = collision.collider.GetComponent<Rigidbody2D>();
             if(bullet != null)
             {
                 bullet.LevelUpBullet();
+                bulletbounce.pitch = 1 * bulletrb.velocity.y;
+                bulletbounce.Play();
             }
         }
     }
