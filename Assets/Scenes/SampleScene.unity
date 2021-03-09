@@ -7552,9 +7552,9 @@ MonoBehaviour:
   shotgun_unlocked: 0
   rifle_unlocked: 0
   rpg_unlocked: 0
-  shotgun_cost: 100
-  rifle_cost: 250
-  rpg_cost: 1000
+  shotgun_cost: 60
+  rifle_cost: 150
+  rpg_cost: 600
   playerMoney: {fileID: 1758053376319232376}
   playerShoot: {fileID: 7709931521751383225}
 --- !u!114 &713804894
@@ -11804,6 +11804,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3736421190891318409, guid: bc002a48f603f5141bcd078843b2d1d2,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736421190891318409, guid: bc002a48f603f5141bcd078843b2d1d2,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -11819,6 +11824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3736421190891318409, guid: bc002a48f603f5141bcd078843b2d1d2,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736421190891318409, guid: bc002a48f603f5141bcd078843b2d1d2,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -11831,16 +11841,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736421190891318409, guid: bc002a48f603f5141bcd078843b2d1d2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736421190891318409, guid: bc002a48f603f5141bcd078843b2d1d2,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3736421190891318409, guid: bc002a48f603f5141bcd078843b2d1d2,
         type: 3}
